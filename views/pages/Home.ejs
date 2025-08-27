@@ -3,6 +3,14 @@
 
 <main>
 
+    <% annonces.forEach(annonce => { %>
+       <div class="annonce-card"> 
+        <h3><%= annonce.titre %></h3>
+        <p><%= annonce.description.subsstring(0, 100) %>...</p>
+        <span><%= annoce.date %></span>
+       </div> 
+    <% }); %>
+
 </main>
 
 <%- include("../partials/footer") %>

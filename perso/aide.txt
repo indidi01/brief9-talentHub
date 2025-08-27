@@ -1,0 +1,13 @@
+npm init -y
+npm i express ejs pg zod typescript sass rollup tsx tslib @rollup/plugin-terser @rollup/plugin-typescript @types/express
+
+"scripts": {
+    "clean": "rm -rf dist",
+    "dev:server": "tsx watch src/index.ts",
+    "dev:css": "sass --watch src/styles/main.scss public/css/style.css",
+    "dev": "concurrently \"npm:dev:server\" \"npm:dev:css\"",
+    "build:js": "rollup -c",
+    "build:css": "sass src/styles/main.scss public/css/style.css --style=compressed",
+    "build": "npm run clean && npm run build:js && npm run build:css",
+    "start": "node dist/bundle.js"
+  },
